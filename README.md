@@ -13,7 +13,13 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
             2.3.1. `**Diretório de Imagens**`: Este diretório sempre será nomeado de `imgs`, e nele será armazenado os prints utilizados no documento.   
             2.3.2. `**Diretório de código**`:  Este diretório sempre será nomeado de `src`, neste diretório será armazenado os exemplos de códigos feitos nas aulas e seguira a recomendação as boas práticas de  nomeação (sem upper case, com _ entre os nomes, e descrição curta do objetivo do código) 
             2.3.3. `**Diretório de dados*`: Este diretório sempre será nomeado de `db`, e nele será armazenado os dados complementares a serem usados (arquivos pdf etc..)  
-    2.4 Em todo arquivo deverá conter em seu rodapé a seguinte estrutura 
+                2.3.1.1 Exclusivamente nesta imersão será utilziado para apresentar imagens o comando em  `.HTML` para apresentação, seguindo o código abaixo:  
+            ```<div id="Mapa mental">
+            <img src="imgs/mapa_mental.png" alt="Mapa Mental Notebook LM">
+            </div>
+            ```   
+    2.4. Em todo arquivo deverá conter em seu rodapé a seguinte estrutura  
+
    ```
     <table style="text-align: center; width: 100%;"> 
     <caption><b>Skls do projeto </b></caption>
@@ -39,7 +45,6 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
     ```
 
 
-   
 #### 3. Lista de conclusão de aulas
 - [ ] [Aula - 0 Masterclass: Como a IA Aprendeu a Falar](aula_0_como-a-ia-aprendeu-a-falar/aula_0_como-a-ia-aprendeu-a-falar.md)
 - [ ] [Aula - 1 O que uma IA de última geração pode fazer por você?](aula_1_ia-de-ultima-geracao/aula_1_ia-de-ultima-geracao.md)

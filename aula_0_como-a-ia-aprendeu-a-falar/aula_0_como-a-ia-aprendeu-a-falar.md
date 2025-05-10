@@ -11,13 +11,31 @@ Crie um mapa cronológico da história e evolução da Inteligência Artificial,
 ```
 Ao selecionar tal opção será carreda as fontes correlatas sobre o prompt inserido, mostrando quais foram as fontes encontradas durante a pesquisa do assunto de seu prompt, pode-se optar pela importação completa ou parcial dos artigos encontrados.  
 Quando as fontes forem devidamente carregas o [Google Gemini](https://gemini.google.com/app), irá apresentar a seguinte tela: 
-<div id="img01">
-  <img src="aula_0_como-a-ia-aprendeu-a-falar/imgs/panorama_inicial.png" alt="Tela imagem geminie">
+<div id="pompt_img">
+  <img src="imgs/panorama_inicial.png" alt="Tela Google Gemini prompt">
 </div>
 
 Uma nova funcionalidade implementada no notebookLM foi a de geração de um mapa mental:
+<div id="Mapa_mental">
+  <img src="imgs/mapa_mental.png" alt="Mapa Mental Notebook LM">
+</div>
 
-[Mapa mental de exemplo ](aula_0_como-a-ia-aprendeu-a-falar/imgs/Nmapa_mental.png) 
+
+<div style="border-left: 4px solid red; background-color:rgb(22, 23, 24); padding: 10px;">
+  <strong style="color: red;">Importante!</strong>
+  <p>Ao utilizar a oção de gerar conversa aprofundada, o Notebooklm, irá gerar ao usuário uma especie de podcast ao usuário</p>
+</div>
+
+
+<div id="audio_nlm">
+  <img src="imgs/notebooklm_comadio.png" alt="Notebook LM gerando audio">
+</div>
+
+Através do [Google AI Studio](https://aistudio.google.com/app/prompts/new_chat?hl=pt-br), é possível realizar o updload de algum arquivo em mp3 ou algo do tipo, para que possa transcrever o áudio em portugês com simples comando apenas subindo o arquivo e gerando um prompt como transcreva o audio x. 
+com o arquivo em questão. 
+<div id="audio_nlm">
+  <img src="imgs/ia_studio.png" alt="Notebook LM gerando audio">
+</div>
 
 ## Links Uteis  
 [NotebookLM](https://notebooklm.google.com/?pli=1)  
