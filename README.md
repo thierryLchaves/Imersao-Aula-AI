@@ -6,9 +6,9 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
 
 ## Diretrizes
 1. O repositório está estruturado em pastas, onde cada uma das aulas acessadas/aprendidas, estão em suas respectiva pasta. 
-2. O documento contendo a estrutura geral da aula será em formato `.Md(Markdown)`, e seguira a premissa de CamelCase em seu nome.  
-    2.1. As pasta com os nomes da Materias serão iguais as aprensentadas no curso, porém sem acentuação 
-    2.2. Ao ser concluida uma nova aula deverá ser preenchido o [Check Box de conclusão](#3-lista-de-conclusão-de-aulas) informando que a aulas foi realizada.
+2. O documento contendo a estrutura geral da aula será em formato `.Md(Markdown)`, e seguira a seguinte estrutura Nº da aula Resumo do nome da aula separado por "_".  
+    2.1. As pasta com os nomes da Materias serão iguais as aprensentadas no curso, porém sem acentuação  
+    2.2. Ao ser concluida uma nova aula deverá ser preenchido o [Check Box de conclusão](#3-lista-de-conclusão-de-aulas) informando que a aulas foi realizada.  
     2.3. Em toda pasta deverão conter no mínimo **3**(três) outros sub-diretórios  
             2.3.1. `**Diretório de Imagens**`: Este diretório sempre será nomeado de `imgs`, e nele será armazenado os prints utilizados no documento.   
             2.3.2. `**Diretório de código**`:  Este diretório sempre será nomeado de `src`, neste diretório será armazenado os exemplos de códigos feitos nas aulas e seguira a recomendação as boas práticas de  nomeação (sem upper case, com _ entre os nomes, e descrição curta do objetivo do código) 
@@ -37,13 +37,16 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
     ---
 
     ```
+
+
+   
 #### 3. Lista de conclusão de aulas
-- [ ] Aula - 0
-- [ ] Aula - 1
-- [ ] Aula - 2 
-- [ ] Aula - 3
-- [ ] Aula - 4
-- [ ] Aula - 5
+- [ ] [Aula - 0 Masterclass: Como a IA Aprendeu a Falar](aula_0_como-a-ia-aprendeu-a-falar/aula_0_como-a-ia-aprendeu-a-falar.md)
+- [ ] [Aula - 1 O que uma IA de última geração pode fazer por você?](aula_1_ia-de-ultima-geracao/aula_1_ia-de-ultima-geracao.md)
+- [ ] [Aula - 2 Como conversar com a IA e fazer ela trabalhar por você](aula_2_como-conversar-com-a-ia/aula_2_como-conversar-com-a-ia.md)
+- [ ] [Aula - 3 IA no seu dia a dia: Do Google Calendar ao Drive com Gemini](aula_3_ia-no-dia-a-dia-com-gemini/aula_3_ia-no-dia-a-dia-com-gemini.md)
+- [ ] [Aula - 4 Criando seu primeiro chatbot com IA generativa](aula_4_primeiro-chatbot-com-ia/aula_4_primeiro-chatbot-com-ia.md)
+- [ ] [Aula - 5 Construindo agentes que resolvem tarefas por você](aula_5_agentes-que-resolvem-tarefas/aula_5_agentes-que-resolvem-tarefas.md)
 
 
     <table style="text-align: center; width: 100%;"> 

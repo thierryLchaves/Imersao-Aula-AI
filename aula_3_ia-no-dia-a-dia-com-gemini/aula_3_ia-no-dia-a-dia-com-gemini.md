@@ -1,0 +1,1 @@
+aula_3_ia-no-dia-a-dia-com-gemini.md
