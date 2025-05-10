@@ -46,7 +46,7 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
 
 
 #### 3. Lista de conclusão de aulas
-- [ ] [Aula - 0 Masterclass: Como a IA Aprendeu a Falar](aula_0_como-a-ia-aprendeu-a-falar/aula_0_como-a-ia-aprendeu-a-falar.md)
+- [X] [Aula - 0 Masterclass: Como a IA Aprendeu a Falar](aula_0_como-a-ia-aprendeu-a-falar/aula_0_como-a-ia-aprendeu-a-falar.md)
 - [ ] [Aula - 1 O que uma IA de última geração pode fazer por você?](aula_1_ia-de-ultima-geracao/aula_1_ia-de-ultima-geracao.md)
 - [ ] [Aula - 2 Como conversar com a IA e fazer ela trabalhar por você](aula_2_como-conversar-com-a-ia/aula_2_como-conversar-com-a-ia.md)
 - [ ] [Aula - 3 IA no seu dia a dia: Do Google Calendar ao Drive com Gemini](aula_3_ia-no-dia-a-dia-com-gemini/aula_3_ia-no-dia-a-dia-com-gemini.md)
