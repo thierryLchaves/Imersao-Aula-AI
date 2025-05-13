@@ -60,6 +60,9 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
         <td style="text-align: center;">
         <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white"/>
         </td>
+        <td style="text-align: left;">
+        <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+        </td>
     <tr> 
     </table>
 ---

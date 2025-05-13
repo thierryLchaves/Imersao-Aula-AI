@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência de Viagens Turquia Mágica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white py-4 md:py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl md:text-2xl font-semibold">Agência de Viagens Turquia Mágica</h1>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-4">
+                        <li><a href="#destinos" class="hover:text-blue-300 transition duration-300">Destinos</a></li>
+                        <li><a href="#pacotes" class="hover:text-blue-300 transition duration-300">Pacotes</a></li>
+                        <li><a href="#contacto" class="hover:text-blue-300 transition duration-300">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button id="menu-button" class="md:hidden text-white focus:outline-none" aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-button" class="text-white focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#destinos" class="block text-lg text-white hover:text-blue-300 transition duration-300">Destinos</a></li>
+                    <li><a href="#pacotes" class="block text-lg text-white hover:text-blue-300 transition duration-300">Pacotes</a></li>
+                    <li><a href="#contacto" class="block text-lg text-white hover:text-blue-300 transition duration-300">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="bg-blue-100 py-16 md:py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-semibold text-blue-700 mb-4">Descubra a Magia da Turquia</h2>
+            <p class="text-lg text-gray-700 mb-8">Viagens personalizadas para experiências inesquecíveis.</p>
+            <a href="#contacto" class="bg-orange-500 text-white py-3 px-6 rounded-full hover:bg-orange-600 transition duration-300 text-lg">Planear a sua viagem</a>
+        </div>
+    </section>
+
+    <section id="destinos" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-8">Destinos Populares</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/007BFF/FFFFFF?text=Istambul" alt="Istambul" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Istambul</h3>
+                        <p class="text-gray-700 mb-4">A cidade que une dois continentes, com uma rica história e cultura vibrante.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300">Ver mais</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/FFFFFF?text=Capadócia" alt="Capadócia" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Capadócia</h3>
+                        <p class="text-gray-700 mb-4">Paisagens únicas com formações rochosas e passeios de balão inesquecíveis.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300">Ver mais</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/FFC107/000000?text=Antália" alt="Antália" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Antália</h3>
+                        <p class="text-gray-700 mb-4">Praias deslumbrantes, ruínas antigas e uma vida noturna animada.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pacotes" class="bg-blue-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-8">Pacotes de Viagem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pacote Essencial Istambul</h3>
+                        <p class="text-gray-700 mb-4">5 dias explorando os principais pontos turísticos de Istambul.</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Alojamento em hotel 4 estrelas</li>
+                            <li>Pequeno-almoço incluído</li>
+                            <li>Visitas guiadas</li>
+                        </ul>
+                        <p class="text-xl font-bold text-blue-600">Desde 500€</p>
+                        <a href="#" class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition duration-300 block text-center">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Aventura na Capadócia</h3>
+                        <p class="text-gray-700 mb-4">4 dias de experiências únicas na Capadócia.</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Alojamento em hotel boutique</li>
+                            <li>Passeio de balão</li>
+                            <li>Visitas a cidades subterrâneas</li>
+                        </ul>
+                        <p class="text-xl font-bold text-blue-600">Desde 750€</p>
+                        <a href="#" class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition duration-300 block text-center">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Relax em Antália</h3>
+                        <p class="text-gray-700 mb-4">7 dias de descanso nas praias paradisíacas de Antália.</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Alojamento em resort de luxo</li>
+                            <li>Regime tudo incluído</li>
+                            <li>Acesso a praias privadas</li>
+                        </ul>
+                        <p class="text-xl font-bold text-blue-600">Desde 1000€</p>
+                        <a href="#" class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition duration-300 block text-center">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-8">Contacte-nos</h2>
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
+                        <input type="text" id="nome" name="nome" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="O seu nome" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="O seu email" required>
+                    </div>
+                    <div>
+                        <label for="mensagem" class="block text-gray-700 text-sm font-bold mb-2">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y" placeholder="A sua mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-700 transition duration-300 text-lg w-full md:w-auto">Enviar mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 Agência de Viagens Turquia Mágica. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        const navLinks = document.querySelectorAll('header nav a');
+        const contactForm = document.getElementById('contact-form');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuButton.addEventListener('click', toggleMobileMenu);
+        closeMenuButton.addEventListener('click', toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== menuButton) {
+                toggleMobileMenu();
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Simulação de envio de email (pode ser substituído por uma chamada de API real)
+            console.log('Formulário enviado:', { nome, email, mensagem });
+
+            // Limpar o formulário após o envio (opcional)
+            document.getElementById('nome').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('mensagem').value = '';
+
+            alert('Mensagem enviada com sucesso! Entraremos em contacto em breve.');
+        });
+    </script>
+</body>
+</html>

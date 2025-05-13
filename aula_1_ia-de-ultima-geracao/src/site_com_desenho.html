@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turquia com Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
+        <div class="logo text-xl font-semibold ml-4">Turquia com Amor</div>
+        <nav class="mr-4">
+            <ul class="flex space-x-4">
+                <li><a href="#home" class="hover:text-blue-300 no-underline">Home</a></li>
+                <li><a href="#tours" class="hover:text-blue-300 no-underline">Tours</a></li>
+                <li><a href="#quem-somos" class="hover:text-blue-300 no-underline">Quem Somos</a></li>
+                <li><a href="#contato" class="hover:text-blue-300 no-underline">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="bg-blue-100 text-gray-800 text-center py-20 px-4 rounded-md">
+        <h1 class="text-3xl font-bold mb-4">Banner com Imagem de Istambul</h1>
+        <p class="text-lg">Descubra a magia da Turquia conosco.</p>
+        </section>
+
+    <section id="tours" class="container mx-auto py-16 px-4">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">Nossos Tours</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">Tour 1</h3>
+                <p class="text-gray-700">Descrição do Tour 1. Este tour explora...</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">Tour 2</h3>
+                <p class="text-gray-700">Descrição do Tour 2. Descubra as maravilhas de...</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">Tour 3</h3>
+                <p class="text-gray-700">Descrição do Tour 3. Uma jornada inesquecível por...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-yellow-100 text-gray-800 text-center py-12 px-4 rounded-md">
+        <h2 class="text-2xl font-bold mb-4">Banner com Desconto</h2>
+        <p class="text-lg">Aproveite nossas ofertas especiais em tours selecionados!</p>
+    </section>
+
+     <section id="quem-somos" class="container mx-auto py-16 px-4">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">Quem Somos</h2>
+        <p class="text-lg text-gray-700 text-center">
+            Somos uma agência de viagens apaixonada por conectar você com a beleza e a cultura da Turquia.
+            Com anos de experiência, criamos tours inesquecíveis que capturam a essência deste país incrível.
+            Nossa missão é oferecer experiências autênticas, seguras e personalizadas, garantindo que cada
+            viagem seja tão única quanto você. Da vibrante Istambul às paisagens de tirar o fôlego da Capadócia,
+            deixe-nos guiar você em uma aventura inesquecível.
+        </p>
+    </section>
+
+    <section id="contato" class="container mx-auto py-16 px-4">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">Contato</h2>
+        <p class="text-lg text-gray-700 text-center">
+            Entre em contato conosco para planejar sua viagem dos sonhos para a Turquia.
+            Estamos à disposição para responder às suas perguntas e personalizar o seu tour.
+        </p>
+        <div class="mt-8 text-center">
+            <p class="text-gray-700">Email: info@turquiacomamor.com</p>
+            <p class="text-gray-700">Telefone: +123 456 7890</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4 text-center rounded-md">
+        <p>© 2024 Turquia com Amor. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Este script pode ser usado para adicionar interatividade, como rolagem suave
+        // para as seções da página.
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

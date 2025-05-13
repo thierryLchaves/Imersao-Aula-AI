@@ -41,3 +41,24 @@ com o arquivo em questão.
 [NotebookLM](https://notebooklm.google.com/?pli=1)  
 [Google Gemini](https://gemini.google.com/app)  
 [Google AI Studio](https://aistudio.google.com/app/prompts/new_chat?hl=pt-br)  
+
+
+  <table style="text-align: center; width: 100%;"> 
+  <caption><b>Skls do projeto </b></caption>
+  <tr>
+      <td style="text-align: center;">
+      <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white"/>
+      </td>
+      <td style="text-align: left;">
+      <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+      </td>
+  </tr>
+  </table>
+
+  ---
+  titulo: Aula 0 Como a ia aprendeu a falar?  
+  autor: Thierry Lucas Chaves  
+  data_criacao: 2025-05-10  
+  data_modificacao: 2025-05-13  
+  versao: 1.0  
+  ---
