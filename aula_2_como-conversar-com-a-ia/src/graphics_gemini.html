@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativo Financeiro Bancos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Estilo básico para centralizar o canvas e adicionar padding */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Cor de fundo suave */
+            padding: 20px;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 800px; /* Largura máxima para o gráfico */
+            background-color: #ffffff; /* Fundo branco para o gráfico */
+            padding: 20px;
+            border-radius: 8px; /* Cantos arredondados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <h1 class="text-2xl font-bold text-center mb-6">Comparativo Financeiro: Banco do Brasil vs CAIXA (2024 Acumulado)</h1>
+        <canvas id="financialComparisonChart"></canvas>
+    </div>
+
+    <script>
+        // Dados financeiros dos bancos (convertidos para USD, 1 USD = 5 BRL)
+        const financialData = {
+            labels: ['Lucro Líquido (USD Bilhões)', 'ROA (%)', 'ROE (%)'],
+            datasets: [
+                {
+                    label: 'Banco do Brasil',
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)', // Cor azul do Tailwind
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1,
+                    data: [7.58, 1.6, 21.4] // Lucro Líquido (em Bilhões), ROA, ROE
+                },
+                {
+                    label: 'CAIXA',
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)', // Cor verde do Tailwind
+                    borderColor: 'rgba(16, 185, 129, 1)',
+                    borderWidth: 1,
+                    data: [2.80, 0.7, 10.4] // Lucro Líquido (em Bilhões), ROA, ROE
+                }
+            ]
+        };
+
+        // Configuração do gráfico
+        const ctx = document.getElementById('financialComparisonChart').getContext('2d');
+        const financialComparisonChart = new Chart(ctx, {
+            type: 'bar', // Tipo de gráfico de barras
+            data: financialData,
+            options: {
+                responsive: true, // Torna o gráfico responsivo
+                maintainAspectRatio: false, // Permite ajustar o tamanho do gráfico
+                scales: {
+                    y: {
+                        beginAtZero: true, // Começa o eixo Y em zero
+                        title: {
+                            display: true,
+                            text: 'Valor / Porcentagem' // Título do eixo Y
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top', // Posição da legenda
+                    },
+                    title: {
+                        display: false, // O título já está no H1
+                        text: 'Comparativo Financeiro: Banco do Brasil vs CAIXA'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    // Formata o valor com base no índice (Lucro em Bilhões, ROA/ROE em %)
+                                    if (context.dataIndex === 0) {
+                                        label += context.parsed.y.toFixed(2) + ' Bilhões USD';
+                                    } else {
+                                        label += context.parsed.y.toFixed(2) + '%';
+                                    }
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Ajusta o tamanho do canvas para ser responsivo
+        window.addEventListener('resize', () => {
+            financialComparisonChart.resize();
+        });
+    </script>
+</body>
+</html>
