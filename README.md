@@ -51,7 +51,7 @@ Neste repositório será adotada toda documentação em Markdown, sendo asssim s
 - [X] [Aula - 2 Como conversar com a IA e fazer ela trabalhar por você](aula_2_como-conversar-com-a-ia/aula_2_como-conversar-com-a-ia.md)
 - [X] [Aula - 3 IA no seu dia a dia: Do Google Calendar ao Drive com Gemini](aula_3_ia-no-dia-a-dia-com-gemini/aula_3_ia-no-dia-a-dia-com-gemini.md)
 - [X] [Aula - 3.5 Masterclass Python Alura ](aula_3_5_MasterClass_python/Aula_3_5_Masterclass_python.ipynb)
-- [ ] [Aula - 4 Criando seu primeiro chatbot com IA generativa](aula_4_primeiro-chatbot-com-ia/aula_4_primeiro-chatbot-com-ia.md)
+- [X] [Aula - 4 Criando seu primeiro chatbot com IA generativa](aula_4_primeiro-chatbot-com-ia/aula_4_primeiro-chatbot-com-ia.md)
 - [ ] [Aula - 5 Construindo agentes que resolvem tarefas por você](aula_5_agentes-que-resolvem-tarefas/aula_5_agentes-que-resolvem-tarefas.md)
 
 
