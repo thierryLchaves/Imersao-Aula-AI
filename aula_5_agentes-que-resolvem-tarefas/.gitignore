@@ -1,0 +1,26 @@
+# Arquivos e pastas do ambiente virtual
+.venv/
+venv/
+env/
+__pycache__/
+
+# Arquivos Python gerados
+*.pyc
+*.pyd
+*.egg-info/
+dist/
+build/
+sdist/
+
+# Arquivos de configuração local (se você os usar - tenha cuidado com informações sensíveis!)
+.env
+config.ini
+local_settings.json
+
+# Arquivos temporários de sistema operacional
+*.swp
+Thumbs.db        # Para Windows
+
+# Outros arquivos temporários ou específicos do IDE
+.vscode/        # Pasta do VS Code com configurações específicas do projeto (geralmente seguro ignorar)
+*.log

@@ -56,6 +56,10 @@ Quem compartilha seus projetos ganha mais visibilidade no mercado! Poste seu pro
     - [Construindo um chat](#32-construindo-o-chat)
         - [Configurações de estrutura do chat](#321-configurando-a-estrutura-interna)
         - [Construindo a estrutura de um chat](#322-configurando-as-repetições-de-interações-chat)
+- [Conclusões](#4-fim)
+- [Sobre o projeto](#do-projeto-da-alura)
+    -[Ponto de avaliação de projeto](#pontos-de-avaliação-do-projeto)
+---
 
 Um ponto sobre o `Google IA Studio` e que através do tools do [Google AI Studio](https://aistudio.google.com/app/prompts/new_chat?utm_source=website&utm_medium=referral&utm_campaign=Alura-may-25) é possível utilizar a opção de `Grounding with Google Search `, com essa opção é possível que as interações junto ao prompt do `Google IA Studio` realize uma busca no google antes de gerar a resposta embasado na pesquisa conforme imagem abaixo:  
 
