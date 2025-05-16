@@ -51,6 +51,11 @@ Quem compartilha seus projetos ganha mais visibilidade no mercado! Poste seu pro
 ## Sumário
 - [Notações gerais ](#1-do-código)
 - [Configurando variaveis de ambiente](#2-configurando-variaveis-de-ambiente)
+- [Importando o SDK](#3-importando-o-sdk)
+    - [Instânciando objeto](#31-instânciando-o-modelo)
+    - [Construindo um chat](#32-construindo-o-chat)
+        - [Configurações de estrutura do chat](#321-configurando-a-estrutura-interna)
+        - [Construindo a estrutura de um chat](#322-configurando-as-repetições-de-interações-chat)
 
 Um ponto sobre o `Google IA Studio` e que através do tools do [Google AI Studio](https://aistudio.google.com/app/prompts/new_chat?utm_source=website&utm_medium=referral&utm_campaign=Alura-may-25) é possível utilizar a opção de `Grounding with Google Search `, com essa opção é possível que as interações junto ao prompt do `Google IA Studio` realize uma busca no google antes de gerar a resposta embasado na pesquisa conforme imagem abaixo:  
 
@@ -101,4 +106,130 @@ Caso estivesse utilizando o Google Colab essa definição de váriavel de ambien
 
     os.environ['GOOGLE_API_KEY'] = userdata.get('GOOGLE_API_KEY')
     ```  
-A principal diferença é que como estou executando o código em máquina local os passos para definição de de variavel de ambiente são definidas diretamente na máquina, enquanto no google colab utilizase do SDK google.colab userdata para que essa plataforma caputure essa variavel de ambiente no cofre que foi determinado 
+A principal diferença é que como estou executando o código em máquina local os passos para definição de de variavel de ambiente são definidas diretamente na máquina, enquanto no google colab utilizase do SDK google.colab userdata para que essa plataforma caputure essa variavel de ambiente no cofre que foi determinado. 
+
+## 3. Importando o SDK 
+Para inicializar a SDK mencionada na instalação da [bibliotéca](#1-do-código), iremos então realizar o import de uma *"Sub-modulo"* dessa bibliotéca, para que seja importado apénas o "modulo" `genai *(Generative AI)*`, utilizaremos o seguinte código:  
+```
+from google import genai
+```
+### 3.1. Instânciando o modelo 
+Após o import do SDK mencionado, podemos então realizar a instância do modelo propriamente dito, a estrutura *"básica"*, segue a seguinte premissa:
+
+```
+from google import genai
+
+# No techo abaixo estou instanciando para váriavel chamada de client, que ela tera as propriedades do objeto genai.Client()
+client = genai.Client()
+
+# como ainda não sabemos ao certo que modelo será utilizado utilizamos o for para caputra e apresentação desses modelos. 
+for model in client.models.list():
+    print(model.name)
+# No output desse laço, usamos as propriedade do objeto client, com as funções models e list para listas os modelos, como estamo realizando em um laço, 
+# e estou atribuindo que para cada client.model.list() será = model, atribui também a propriedade de name, para listar apenas o nome do modelo
+
+# De posse do nome do modelo, por fim, irei atribuir o nome desse modelo em uma variavél, e depois em outra variavel realizar a instancia novamente de cliente 
+# Dessa vez será requerido as funções de modelos do cliente e a propriedade de gerar conteudo, como parametro ela espera o modelo e o conteudo
+modelo = "gemini-2.0-flash"
+
+resposta = client.models.generate_content(model=modelo,
+                                          contents="Quem é a empresa por tras dos modelos Gemini ?")
+
+``` 
+Com a estrutura acima apenas definimos a conexão com os servidores do Google, para que ele se conectasse a um módulo especifico do servidor passando uma pergunda a cada instância, se por assim podemos dizer, porém ainda não criamos um chat.  
+
+### 3.2. Construindo o CHAT
+Agora que realizamos a instância do objeto e verificamos suas, fucionalidades iremos construir um chatbot propriamente dito, o que diverge o que foi feito no [tópico 3](#31-instânciando-o-modelo), de um chatbot propriamente dito e o seu histórico de conversa, como em um chatbot a premissa é `conversar` com a IA é necessário que esse modelo acesse o histórico das conversas/interações feitas com ele, e para tal complementaremos o código da seguinte maneira:  
+```
+# Com esse trecho iremos atrbiuir a variavél chat a propriedade de chat do objeto client, e então usar a propridade de criar passando o parâmetro de Modelo
+chat = client.chats.create(model=modelo)
+
+# Nesse trecho atribuo a variavel resposta a propriedade de enviar mensagem ao objeto acima nomeado de chat 
+resposta = chat.send_message("oi tudo bem?")
+
+# Nesse trecho obtenho o valor de texto para o objeto resposta que recebeu o valor de chat.send_message
+resposta.text
+```
+### 3.2.1 Configurando a estrutura interna 
+Conforme visualizado algumas vezes as respostas de um chatbot podem ser demasiadamente longas, o que por vezes atrapalha a interação do usuário junto o chatbot. 
+Porém em modelos de `**LLM **` temos um parâmetro para essa criação de resultados, que é chamado de `System Instruction`, essa instrução de sistema, pode-se resumir como as orientações que o modelo criado tem de seguir sempre que ele gerar uma resposta. esse `System Instruction` assemelha-se com o que foi visto em [Engenharia de Prompt](../aula_2_como-conversar-com-a-ia/aula_2_como-conversar-com-a-ia.md), onde se passa algumas definições para o chatbot dizendo como se portar suas premissas usando de técnicas de `Zero-shot`, `Few-Shot` ou `Chain-of-Thought`, o problema dessa abordagem é que sempre teremos que realizar o *"input"* dessa instrução.
+Isso funcionária passando em uma variavel ou alguma estrutura para ler essa instrução, porém como estamos realizando a construção de um chatbot com auxilio de uma API. Existe outra maneira, através da SDK `google.genai`, podemos utilizar o modulos types, para que esse `System Instruction` seja persistido dentro desse chatbot, utilizando uma estrutura como o código abaixo:  
+```
+from google.genai import type 
+# Com essa variavel ao ser instânciado novamente o objeto chat, poderemos passar um novo parâmetro para que ele obedeça tal instrução sempre que o objeto for "acionado"
+chat_config = types.GenerateContentConfig (
+    system_instruction="Realize as instruções desejadas aqui",
+)
+chat = client.chats.create(model=modelo,config=chat_config)
+resposta = chat.send_message("O que é computação quantica")
+resposta.text
+```
+Por fim ainda temos a opção através do objeto de chat a principal objetivo dele que é o armazenamento do histórico, nesse caso para obter / guardar esse histórico instânciamos o objeto chat com a propriedade `chat.get_history()`
+
+### 3.2.2 Configurando as repetições de interações chat
+Como o objetivo em si é construir um chatbot, podemos utilizar de um laço de repetição, no caso utilizaremos o while, pois nesse modelo de repetição, o laço não é quebrado enquanto uma determinada instrução não for atingida, uma solução então será que para o usuário sair desse chat, será definido uma `Palavra-chave`, para quebrar o laço de repetição. 
+```
+prompt = input("Esperando prompt: ")
+
+while prompt != "fim":
+    resposta = chat.send_message(prompt)
+    print(f"Pergunta: {prompt}")
+    print(f"Resposta: {resposta.text}")
+    print("\n")
+    prompt = input("Esperando prompt: ")
+```  
+Com esse modelo acima iremos enviar e receber respostas do Gemini, enquanto o mesmo não receber um prompt do usuário com a palavra fim. 
+
+### 4. Fim 
+Com isso concluimos a configuração inicial de um chatbot utilizando a SDK do google para conectar com o google Gemini, realizar perguntas e obter respostas tudo através do código e configurações de api de forma simples. 
+---
+# Do projeto da alura. 
+## Enunciado  
+
+1. Deverá gerar ser gerado um projeto utilizando a API do google até o final do sábado a noite 
+2. Preencha o [formulário](https://docs.google.com/forms/d/e/1FAIpQLSe2AQOKarxQ79ULafKzCYCDbB238jwtmN1Zeybk0epBIMAwWQ/closedform)
+3. Será permitido a submissão de mais de 1 projeto, porém somente um projeto estará concorrendo ao prêmio, porém somente o mais votado será valido. 
+4. O envido do formulário somente será valido no dia 17/05/2025 até as 23:59:59
+5. Será realizado uma primeira seleção no discord da imersão para serém votados no domingo para votação publica. 
+
+## Pontos de avaliação do projeto
+
+1. Utildade : Qual problema real, o projeto em questão resolve. 
+2. Criatividade : O modo como foi construido o prompt o chat etc..
+3. Eficácia :  O quão bem esse código está estruturado. 
+4. Apresentação: O quanto o reademe esteja feito e o projeto em si está apresentado. 
+
+---
+  <table style="text-align: center; width: 100%;"> 
+  <caption><b>Skls do projeto </b></caption>
+  <tr>
+      <td style="text-align: left;">
+      <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white"/>
+      </td>
+      <td style="text-align: center;">
+      <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+      </td>
+      <td style="text-align: rigth;">
+      <img alt="Google Gemini" src="https://img.shields.io/badge/google%20gemini-8E75B2?style=for-the-badge&logo=google%20gemini&logoColor=white"/>
+      </td>
+  </tr>
+  <tr>
+      <td style="text-align: left;">
+      <img alt="Vs code" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
+      </td>
+      <td style="text-align: center;">
+      <img alt="Jupyter Notebok" src=https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white"/>
+      </td>
+      <td style="text-align: rigth;">
+      <img alt="Python" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/>
+      </td>
+  </tr>
+  </table>   
+
+  ---
+Titulo: Aula 4 Criando seu primeiro chatbot com IA generativa  
+Autor: Thierry Lucas Chaves  
+Data criacao: 2025-05-15  
+Data modificacao: 2025-05-16  
+Versao: 1.0    
+---
